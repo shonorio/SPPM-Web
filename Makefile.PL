@@ -45,6 +45,8 @@ requires 'B::Hooks::OP::Check';
 requires 'HTML::TreeBuilder::XPath';
 requires 'Test::UseAllModules';
 
+requires 'REST::Google';
+
 catalyst;
 
 install_script glob('script/*.pl');
