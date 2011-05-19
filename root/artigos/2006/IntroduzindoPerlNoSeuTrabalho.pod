@@ -1,6 +1,6 @@
-=pod
+=encoding utf-8
 
-r2 - 19 Aug 2006 - JoenioCosta
+=pod
 
 =head1 Introduzindo a Linguagem Perl no seu trabalho
 
@@ -153,19 +153,9 @@ interessantes
 
 =back
 
-----
-
-Criada por: f.recsky E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-Sexta-feira 20 of Janeiro, 2006 [02:09:36 UTC] por f.recsky
-
 =head1 AUTOR
 
-Joenio Costa
+Frederico Recsky
 
 =cut
 
-#Pod::HTML2Pod conversion notes:
-# 5437 bytes of input
-#Sun Jan 31 01:46:06 2010 mantovani
-# No a_name switch not specified, so will not try to render <a name='...'>
-# No a_href switch not specified, so will not try to render <a href='...'>

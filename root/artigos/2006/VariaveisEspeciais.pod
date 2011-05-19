@@ -1,6 +1,6 @@
-=pod
+=encoding utf-8
 
-r7 - 17 Nov 2006 
+=pod
 
 =head1 Variáveis Especiais em Perl
 

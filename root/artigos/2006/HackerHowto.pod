@@ -1,6 +1,6 @@
-=pod
+=encoding utf-8
 
-r1 - 09 Mar 2006 - NelsonFerraz
+=pod
 
 =head1 Como se tornar um hacker
 
@@ -445,8 +445,3 @@ Nelson Ferraz
 
 =cut
 
-#Pod::HTML2Pod conversion notes:
-# 24101 bytes of input
-#Sun Jan 31 01:45:54 2010 mantovani
-# No a_name switch not specified, so will not try to render <a name='...'>
-# No a_href switch not specified, so will not try to render <a href='...'>

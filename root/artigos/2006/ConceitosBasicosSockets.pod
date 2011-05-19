@@ -1,6 +1,4 @@
-=pod
-
-r2 - 19 Aug 2006 - JoenioCosta
+=encoding utf-8
 
 =head1 Conceitos básicos sobre Sockets
 
@@ -105,7 +103,7 @@ Na linha 5 estamos definindo o protocolo, utilizaremos o TCP.
    4                                    PeerPort => "80",
    5                                    Proto => "tcp"   
    6                                   );
-   7 die "NÃ£o foi possivel criar a socket\n" unless $socket;
+   7 die "Não foi possível criar a socket\n" unless $socket;
 
 Caso nE<atilde>o for possivel criar a socket serE<aacute> exibida uma
 mensagem de erro definida na linha 7, e consequentemente essa
@@ -119,10 +117,11 @@ operaE<ccedil>E<atilde>o sera abandonada.
    4                                    PeerPort => "80",
    5                                    Proto => "tcp"   
    6                                   );
-   7 die "NÃ£o foi possivel criar a socket\n" unless $socket;
-   8 if ($socket) {
-   9 print $socket "GET /index.html HTTP/1.0\r\n\r\n";
-  10 }
+   7 die "Não foi possível criar a socket\n" unless $socket;
+   8
+   9 if ($socket) {
+  10   print $socket "GET /index.html HTTP/1.0\r\n\r\n";
+  11 }
 
 Como vocE<ecirc> pode ver, criamos a socket, verificamos se estamos
 conectados e apE<oacute>s isso enviamos a mensagem 'GET /index.html'
@@ -141,12 +140,13 @@ simplesmente um:
    4                                    PeerPort => "80",
    5                                    Proto => "tcp"   
    6                                   );
-   7 die "NÃ£o foi possivel criar a socket\n" unless $socket;
+   7 die "Não foi possível criar a socket\n" unless $socket;
    8 if ($socket) {
-   9 print $socket "GET /index.html HTTP/1.0\r\n\r\n";
-  10 while (<$socket>) {    
-  11 print "$_";
-  12 }}
+   9   print $socket "GET /index.html HTTP/1.0\r\n\r\n";
+  10   while (<$socket>) {    
+  11     print "$_";
+  12   }
+  13 }
 
 Agora utilizaremos um while dentro do if, ou seja caso a socket esteja
 presente, o cliente requisitara o arquivo index.html, e atE<eacute> o
@@ -162,13 +162,14 @@ do servidor.
    4                                    PeerPort => "80",
    5                                    Proto => "tcp"   
    6                                   );
-   7 die "NÃ£o foi possivel criar a socket\n" unless $socket;
+   7 die "Não foi possivel criar a socket\n" unless $socket;
    8 if ($socket) {
-   9 print $socket "GET /index.html HTTP/1.0\r\n\r\n";
-  10 while (<$socket>) {    
-  11 print "$_";
-  12 }}
-  13 close($socket);
+   9   print $socket "GET /index.html HTTP/1.0\r\n\r\n";
+  10   while (<$socket>) {    
+  11     print "$_";
+  12   }
+  13 }
+  14 close($socket);
 
 Finalmente, apE<oacute>s a pequena operaE<ccedil>E<atilde>o, a socket
 serE<aacute> fechada.
@@ -182,14 +183,15 @@ serE<aacute> fechada.
    5                                    PeerPort => "80",
    6                                    Proto => "tcp"   
    7                                   );
-   8 die "NÃ£o foi possivel criar a socket\n" unless $socket;
+   8 die "Não foi possível criar a socket\n" unless $socket;
    9 if ($socket) {
-  10 print $socket "GET /index.html HTTP/1.0\r\n\r\n";
-  11 while (<$socket>) {    
-  12 print "$_";
-  13 }}
-  14 close($socket);
-  15 exit;
+  10   print $socket "GET /index.html HTTP/1.0\r\n\r\n";
+  11   while (<$socket>) {    
+  12     print "$_";
+  13   }
+  14 }
+  15 close($socket);
+  16 exit;
 
 =head2 5. Bibliografia
 
@@ -235,19 +237,9 @@ serE<aacute> fechada.
 
 =back
 
-----
-
-Criada por: frighetti E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-TerE<ccedil>a-feira 17 of Janeiro, 2006 [00:34:09 UTC] por frighetti
-
 =head1 AUTOR
 
-Joenio Costa
+Frighetti
 
 =cut
 
-#Pod::HTML2Pod conversion notes:
-# 9148 bytes of input
-#Sun Jan 31 01:46:01 2010 mantovani
-# No a_name switch not specified, so will not try to render <a name='...'>
-# No a_href switch not specified, so will not try to render <a href='...'>

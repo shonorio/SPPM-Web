@@ -1,6 +1,6 @@
-=pod
+=encoding utf-8
 
-r3 - 23 Dec 2006 - DanielRuoso
+=pod
 
 =head1 Desenhando textos ad-hoc com Gtk2 e Pango
 
@@ -92,8 +92,7 @@ voce escreva em japonE<ecirc>s).
  $mainwindow->add($draw);
  $mainwindow->show_all();
  Gtk2->main();
- 
- 
+
  sub configureit {
          my $draw = shift;
          my $event = shift;
@@ -105,11 +104,14 @@ voce escreva em japonE<ecirc>s).
          my $draw = shift;
          my $event = shift;
          my ($x,$y,$w,$h) = ($event->area->x, $event->area->y, $event->area->width, $event->area->height);
+
          # Obtendo o Graphic Context do widget.
          my $gc = $draw->style->fg_gc($draw->state);
-         # Limpando a área a ser pintada.
+
+         # Limpando a Ãrea a ser pintada.
          $draw->window->clear_area($x, $y, $w, $h);
-         # Vou mexer só na parte que precisa ser atualizada
+
+         # Vou mexer sÃ³ na parte que precisa ser atualizada
          $gc->set_clip_rectangle(Gtk2::Gdk::Rectangle->new($x, $y, $w, $h));
  
          # Pintar o fundo de branco.
@@ -119,19 +121,23 @@ voce escreva em japonE<ecirc>s).
  
          # obter o Pango Context
          my $pangoc = $draw->get_pango_context();
+
          # criar o Font Description
          my $fontdesc = Gtk2::Pango::FontDescription->from_string("Sans 10");
+
          # Criar o layout
          my $layout = Gtk2::Pango::Layout->new($pangoc);
+
          # definir a fonte
          $layout->set_font_description($fontdesc);
+
          # definir o texto
-         $layout->set_text("Algum Texto áæß");
+         $layout->set_text("Algum Texto aqui");
+
          # Desenhar...
          my $rect = Gtk2::Gdk::Rectangle->new(int($canvas_width/2)-75+2,int($canvas_height/2)-100+2,146,20);
          $draw->style->paint_layout($draw->window,$draw->state,1,$rect,undef,undef,$rect->x,$rect->y,$layout);
- 
- 
+
          # Desfazendo o clip
          $gc->set_clip_rectangle(undef);
  }
@@ -143,8 +149,4 @@ Daniel Ruoso
 
 =cut
 
-#Pod::HTML2Pod conversion notes:
-# 6045 bytes of input
-#Sun Jan 31 01:45:43 2010 mantovani
-# No a_name switch not specified, so will not try to render <a name='...'>
-# No a_href switch not specified, so will not try to render <a href='...'>
+

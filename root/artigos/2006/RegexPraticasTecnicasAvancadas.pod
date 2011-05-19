@@ -117,7 +117,7 @@ formato:
 
   my $var = "Contenho fulano no texto." ;
   if ( $var =~ /fulano/ ) {
-    print "A variÃ¡vel possui 'fulano'.\n" ;
+    print "A variável possui 'fulano'.\n" ;
   }
 
 Note que o REGEXP E<eacute> indicado por '=~' e E<eacute> delimitado
@@ -127,7 +127,7 @@ Para modificar-se o delimitador utiliza-se o 'm', igual ao 'q' para
 strings:
 
   if ( $var =~ m~fulano~ ) {
-    print "A variÃ¡vel possui 'fulano'.\n" ;
+    print "A variável possui 'fulano'.\n" ;
   }
 
 =head2 3.1. ParE<acirc>metros
@@ -137,7 +137,7 @@ controle:
 
   my $var = "Contenho FuLaNo no texto." ;
   if ( $var =~ /fulano/i ) {
-    print "A variÃ¡vel possui 'fulano'.\n" ;
+    print "A variável possui 'fulano'.\n" ;
   }
 
 Note o 'i' no fim do REGEXP, indicando "Case Insensitive" (nE<atilde>o
@@ -172,14 +172,14 @@ Para definir um grupo sequencial utilize o '-' entre o caracter base e
 o final:
 
   my $var = "321" ;
-  if ( $var =~ /[1-9]/ ) { print "Possuo um nÃºmero.\n" ;}
+  if ( $var =~ /[1-9]/ ) { print "Possuo um número.\n" ;}
 
 O grupo 1-9 identifica os caracteres: 1 2 3 4 5 6 7 8 9
 
 O mesmo pode ser feito com letras:
 
   my $var = "ABCdef" ;
-  if ( $var =~ /[a-zA-Z]/ ) { print "Tenho letras maiÃºsculas ou minÃºsculas.\n" ;}
+  if ( $var =~ /[a-zA-Z]/ ) { print "Tenho letras maiúsculas ou minúsculas.\n" ;}
 
 =over
 
@@ -192,26 +192,26 @@ O mesmo pode ser feito com letras:
 O uso de grupos de caracteres E<eacute> muito comun, para facilitar o
 uso existem alguns prE<eacute>-definidos:
 
-  \w => [0-9a-zA-Z_]  ## Letras, nÃºmeros e '_'.
-  \d => [0-9]         ## NÃºmeros.
-  \s => [ \t\r\n]     ## espaÃ§o, tab, return, new line. (caracteres brancos).
+  \w => [0-9a-zA-Z_]  ## Letras, números e '_'.
+  \d => [0-9]         ## Números.
+  \s => [ \t\r\n]     ## espaço, tab, return, new line. (caracteres brancos).
 
 Inversos:
 
-  \W => inverso de \w ## caracteres diferentes de letras e nÃºmeros.
-  \D => inverso de \d ## caracteres diferentes de nÃºmeros.
-  \S => inverso de \s ## caracteres nÃ£o brancos.
+  \W => inverso de \w ## caracteres diferentes de letras e números.
+  \D => inverso de \d ## caracteres diferentes de números.
+  \S => inverso de \s ## caracteres não brancos.
 
 Exemplo de uso:
 
   my $var = "321" ;
-  if ( $var =~ /\d/ ) { print "Possuo um nÃºmero.\n" ;}
+  if ( $var =~ /\d/ ) { print "Possuo um número.\n" ;}
 
 ou:
 
   
   my $var = "321" ;
-  if ( $var =~ /[\d\.]/ ) { print "Possuo nÃºmero(s) ou ponto(s).\n" ;}
+  if ( $var =~ /[\d\.]/ ) { print "Possuo número(s) ou ponto(s).\n" ;}
 
 =over
 
@@ -228,10 +228,10 @@ antes!
 Para definir mE<uacute>ltiplas ocorrE<ecirc>ncias de um caracter ou um
 grupo utiliza-se:
 
-  +  => 1 ou mais ocorrÃªncias: 1*
+  +  => 1 ou mais ocorrências: 1*
   ?  => nenhuma ou 1: 0..1
   *  => nenhuma ou mais: *
-  .  => 1 ocorrÃªncia de qualquer caracter.
+  .  => 1 ocorrência de qualquer caracter.
 
 Exemplo:
 
@@ -322,7 +322,7 @@ Para identificar uma sequE<ecirc>ncia fixa utiliza-se (?:xxxx), onde
 xxxx E<eacute> a sua sequE<ecirc>ncia (palavras, etc...). Exemplo:
 
   my $var = "GATACAGATACAGATACA" ;
-  if ( $var =~ /(?:GATACA)+/ ) { print "SequÃªncia 'GATACA' identificada.\n" ;}
+  if ( $var =~ /(?:GATACA)+/ ) { print "Sequência 'GATACA' identificada.\n" ;}
 
 =over
 
@@ -337,7 +337,7 @@ A alternE<acirc>ncia de uma sequE<ecirc>ncia pode ser definida por '|'
 dentro do "grupo fixo":
 
   my $var = "ACATAGGATACA" ;
-  if ( $var =~ /(?:GATACA|ACATAG)+/ ) { print "SequÃªncia 'GATACA' ou 'ACATAG' identificada.\n" ;}
+  if ( $var =~ /(?:GATACA|ACATAG)+/ ) { print "Sequência 'GATACA' ou 'ACATAG' identificada.\n" ;}
 
 =over
 
@@ -354,7 +354,7 @@ E<eacute> vE<aacute>lida para grupos fixos:
   (?:GATACA|ACATAG)+   => 1 ou mais
   (?:GATACA|ACATAG)?   => 0 ou 1
   (?:GATACA|ACATAG)*   => 0 ou mais
-  (?:GATACA|ACATAG)*?  => 0 ou mais atÃ© a prÃ³xima ocorrÃªncia.
+  (?:GATACA|ACATAG)*?  => 0 ou mais até a próxima ocorrência.
 
 =head2 3.5. NegaE<ccedil>E<atilde>o
 
@@ -440,7 +440,7 @@ ocorrE<ecirc>ncias dentro dos parE<ecirc>nteses serE<atilde>o
 capturadas/retornadas:
 
   my $var = "aaa BbB ccc" ;
-  if ( $var =~ /(b+)/i ) { print "sequÃªncia b: $1\n" ;}
+  if ( $var =~ /(b+)/i ) { print "sequência b: $1\n" ;}
 
 capturas mE<uacute>ltiplas:
 
@@ -462,7 +462,7 @@ sequE<ecirc>ncia b: BbB?
 
   my $var = "aaa BbB ccc" ;
   my ($bs) = ( $var =~ /(b+)/ ) ;
-  print "sequÃªncia b: $bs\n" ;
+  print "sequência b: $bs\n" ;
 
 mE<uacute>ltiplos retornos:
 
@@ -738,8 +738,8 @@ indica o fim.
     $data =~ s/\\\\//gs ;   #1# Ignora \\
     
     if (
-    $data =~ /^             #2# InÃ­cio
-      \s*                   #3# Ignora espaÃ§os no inÃ­cio.
+    $data =~ /^             #2# Início
+      \s*                   #3# Ignora espaços no início.
       (?:(?!\\).|)          #4# Aspas sem \ antes.
       (?:
         "[^"\\]?"                  #5# Nenhum dado delimitado: ""
@@ -750,7 +750,7 @@ indica o fim.
         |
         '(?:(?:\\')|[^'])+(?!\\).' #8# mesmo que 6, mas para '
       )
-      \s*                   #9# Ignora espaÃ§os no fim.
+      \s*                   #9# Ignora espaços no fim.
     $/sx
     ) { return( 1 ) ;} ## return true
     return undef ;     ## return false
@@ -827,19 +827,9 @@ story
 
 =back
 
-----
-
-Criada por: frighetti E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-TerE<ccedil>a-feira 17 of Janeiro, 2006 [16:45:51 UTC] por frighetti
-
 =head1 AUTOR
 
 David Dias
 
 =cut
 
-#Pod::HTML2Pod conversion notes:
-# 24999 bytes of input
-#Sun Jan 31 01:45:56 2010 mantovani
-# No a_name switch not specified, so will not try to render <a name='...'>
-# No a_href switch not specified, so will not try to render <a href='...'>

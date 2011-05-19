@@ -1,28 +1,8 @@
+=encoding utf-8
+
 =pod
 
-r3 - 20 Aug 2006 - JoenioCosta
-
 =head1 Recomendações para programação em Perl
-
-----
-
-=over
-
-=item * RecomendaE<ccedil>E<otilde>es gerais
-
-=item * EstE<eacute>tica do cE<oacute>digo
-
-=item * Filosofia de desenvolvimento
-
-=item * Nomenclatura em geral
-
-=item * Recursos interessantes da linguagem
-
-=item * ConsideraE<ccedil>E<otilde>es finais
-
-=back
-
-----
 
 I<>
 
@@ -113,7 +93,7 @@ funE<ccedil>E<atilde>o ("funcao()" ao invE<eacute>s de "funcao ()")
 =back
 
         @animais = ( 'cachorro', 'gato', 'avestruz',
-                     'urubu',    'leÃ£o', 'girafa'    );
+                     'urubu',    'leão', 'girafa'    );
 
 =over
 
@@ -135,20 +115,20 @@ mais legE<iacute>vel. Por exemplo:
 
 =back
 
-        open(my $fh, 'arq') or die "NÃ£o foi possÃ­vel abrir 'arq': $!";
+        open(my $fh, 'arq') or die "Não foi possível abrir 'arq': $!";
 
 E<eacute> melhor que
 
-        die "NÃ£o foi possÃ­vel abrir 'arquivo': $!" unless open(my $fh, 'arq');
+        die "Não foi possível abrir 'arquivo': $!" unless open(my $fh, 'arq');
 
 porque a segunda forma esconde o ponto principal da sentenE<ccedil>a em
 um modificador. Por outro lado
 
-         print "Iniciando anÃ¡lise\n" if $verbose;
+         print "Iniciando análise\n" if $verbose;
 
 E<eacute> melhor que
 
-         $verbose && print "Iniciando anÃ¡lise\n";
+         $verbose && print "Iniciando análise\n";
 
 porque o ponto principal nE<atilde>o E<eacute> se o usuE<aacute>rio
 estE<aacute> em modo verbose ou nE<atilde>o.
@@ -214,8 +194,8 @@ variE<aacute>veis:
 =back
 
       $ALL_CAPS_HERE   constantes (cuidado pois existem nomes reservados)
-      $Some_Caps_Here  variÃ¡veis globais
-      $no_caps_here    variÃ¡veis de escopo local ( my() ou local() )
+      $Some_Caps_Here  variáveis globais
+      $no_caps_here    variáveis de escopo local ( my() ou local() )
 
 Nomes de funE<ccedil>E<otilde>es e mE<eacute>todos normalmente ficam
 melhores sempre em letras minE<uacute>sculas.
@@ -529,13 +509,13 @@ paralelas. NE<atilde>o faE<ccedil>a isso:
 
 =back
 
-      $idade{"JoÃ£o"} = 23;
-      $pai{"JoÃ£o"}   = "Joaquim";
+      $idade{"Joao"} = 23;
+      $pai{"Joao"}   = "Joaquim";
 
 Quando vocE<ecirc> deveria fazer isso
 
-      $pessoas{"JoÃ£o"}{idade} = 23;
-      $pessoas{"JoÃ£o"}{pai}   = "Joaquim;
+      $pessoas{"Joao"}{idade} = 23;
+      $pessoas{"Joao"}{pai}   = "Joaquim;
 
 =over
 
@@ -580,10 +560,6 @@ entendE<ecirc>-lo e tivesse que corrigir algum problema, por exemplo.
 Seja sincero consigo mesmo e saiba reconhecer os seus vE<iacute>cios
 que nE<atilde>o sE<atilde>o "saudE<aacute>veis" para o cE<oacute>digo.
 
-----
-
-Criada por: frighetti E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-Quinta-feira 26 of Janeiro, 2006 [18:29:37 UTC] por frighetti
 
 =head1 AUTOR
 
@@ -591,8 +567,3 @@ Joenio Costa
 
 =cut
 
-#Pod::HTML2Pod conversion notes:
-# 21723 bytes of input
-#Sun Jan 31 01:45:58 2010 mantovani
-# No a_name switch not specified, so will not try to render <a name='...'>
-# No a_href switch not specified, so will not try to render <a href='...'>

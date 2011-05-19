@@ -217,8 +217,3 @@ Otavio Fernandes
 
 =cut
 
-#Pod::HTML2Pod conversion notes:
-# 8936 bytes of input
-#Sun Jan 31 01:45:46 2010 mantovani
-# No a_name switch not specified, so will not try to render <a name='...'>
-# No a_href switch not specified, so will not try to render <a href='...'>
