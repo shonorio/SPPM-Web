@@ -2,8 +2,6 @@
 
 =pod
 
-r3 - 01 Dec 2006 - OtavioFernandes
-
 =head1 Introdução ao Inline::C
 
 I<>
